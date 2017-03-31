@@ -138,8 +138,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             hud.hide(animated: true)
         }
         
-        rechability.whenUnreachable = { rechability in
+        //rechability.whenUnreachable = { rechability in
             //alert para decir que no tiene internet
+        
+            let alert = UIAlertController(title: "mensaje", message: "no", preferredStyle: UIAlertControllerStyle.alert)
+        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+        })
+        
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: {})
+        
+        //}
+        
+        do{
+         try rechability.startNotifier()
+        } catch {
+            print("Unable to start")
         }
         
         /*for i in 1...8{
@@ -187,7 +201,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    @IBAction func cargarpublicaciones(_ sender: UIBarButtonItem) {
+    @IBAction func btnRefreshTouch(_ sender: UIBarButtonItem) {
         self.obtenerPublicaciones()
         tableView.reloadData()
     }

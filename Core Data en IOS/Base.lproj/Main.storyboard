@@ -9,7 +9,7 @@
         <!--Publicaciones-->
         <scene sceneID="1ls-6v-PRs">
             <objects>
-                <viewController id="Q0m-v9-rMM" customClass="ViewController" customModule="Servicios_Web_IOS_Modulo3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q0m-v9-rMM" customClass="ViewController" customModule="Core_Data_en_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fqG-4E-d0T"/>
                         <viewControllerLayoutGuide type="bottom" id="LCA-YW-Jq8"/>
@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="celda" selectionStyle="default" indentationWidth="10" reuseIdentifier="celda" rowHeight="189" id="957-3p-xwQ" customClass="PublicacionesCell" customModule="Servicios_Web_IOS_Modulo3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="celda" selectionStyle="default" indentationWidth="10" reuseIdentifier="celda" rowHeight="189" id="957-3p-xwQ" customClass="PublicacionesCell" customModule="Core_Data_en_IOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="189"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="957-3p-xwQ" id="8M0-jM-gdf">
