@@ -9,20 +9,17 @@
 import UIKit
 import MBProgressHUD
 import CoreData
+import Reachability
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var tvpublicaciones: UITableView!
-    
-    
+    @IBOutlet weak var tableView: UITableView!
     var publicaciones = Array<Publicaciones>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         listarDeCoreData()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -105,6 +102,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func obtenerPublicaciones(){
         
+        //comprobar si tengo internet
+        let rechability = Reachability()
+        
+        if rechability.isReachable() {
+            print("rechability")
+        }
+        
+        if rechability.isReachableViaWiFi() {
+            print("datos")
+        }
+        
+        if rechability.isReachableViaWWAN() {
+            print("wifi")
+        }
+        
+        
         publicaciones.removeAll()
         
         let hud = MBProgressHUD(view: self.view)
@@ -123,6 +136,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             self.tableView.reloadData()
             
             hud.hide(animated: true)
+        }
+        
+        rechability.whenUnreachable = { rechability in
+            //alert para decir que no tiene internet
         }
         
         /*for i in 1...8{
@@ -172,7 +189,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     @IBAction func cargarpublicaciones(_ sender: UIBarButtonItem) {
         self.obtenerPublicaciones()
-        tvpublicaciones.reloadData()
+        tableView.reloadData()
     }
     
     
